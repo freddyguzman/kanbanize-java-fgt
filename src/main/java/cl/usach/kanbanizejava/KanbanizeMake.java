@@ -38,4 +38,12 @@ public class KanbanizeMake implements Kanbanize{
         return structureElements;
     }
     
+    /* ---------------- Metodos Setting --------------- */
+    
+    public SettingElement getSettingsBoard(String idBoard){
+        SettingMethods settingMethods = new SettingMethods(appKanbanize);
+        SettingElement settingElement = settingMethods.getSettingsBoard(idBoard);
+        return settingElement;
+    }
+    
 }

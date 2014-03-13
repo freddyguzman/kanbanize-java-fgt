@@ -14,15 +14,15 @@ public class MainClass
         /*String urlApiBase = "http://kanbanize.com/index.php/api/kanbanize/";
         
         HTTP http = new HTTP();
-        http.setUrl(urlApiBase + "get_projects_and_boards/format/json");
-        String result = http.getResult();
-        System.out.println(result); */
+        http.setUrl(urlApiBase + "get_board_settings/boardid/4/format/json");
+        http.setApikey("AwtDWx0pEckWRtmoDtDUB1arJiRr8UVJw70yznzl");
+        String result = http.getResult();*/
         
         Kanbanize kanbanize = new KanbanizeMake();
         String apiKey = "AwtDWx0pEckWRtmoDtDUB1arJiRr8UVJw70yznzl";
         kanbanize.setConfig(apiKey);
         
-        System.out.println(kanbanize.getFullBoardStructure("4")); 
+        System.out.println(kanbanize.getSettingsBoard("4")); 
         
         
     }

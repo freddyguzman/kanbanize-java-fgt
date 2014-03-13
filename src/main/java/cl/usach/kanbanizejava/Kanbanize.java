@@ -24,4 +24,8 @@ public interface Kanbanize {
     /* ---------------- Metodos Structure --------------- */
     
     public StructureElement getFullBoardStructure(String idBoard);
+    
+    /* ---------------- Metodos Setting --------------- */
+    
+    public SettingElement getSettingsBoard(String idBoard);
 }
