@@ -24,6 +24,12 @@ public class ActivityElement extends FormatDate{
     Date date;
     String taskid;
     
+    /**
+     *
+     * @param jsono
+     * @throws JSONException
+     * @throws ParseException
+     */
     public ActivityElement(JSONObject jsono) throws JSONException, ParseException{
         if(!jsono.isNull("author")) this.author = jsono.getString("author");
         if(!jsono.isNull("event")) this.event = jsono.getString("event");
@@ -32,42 +38,82 @@ public class ActivityElement extends FormatDate{
         if(!jsono.isNull("taskid")) this.taskid = jsono.getString("taskid");
     }
 
+    /**
+     *
+     * @return
+     */
     public String getAuthor() {
         return author;
     }
 
+    /**
+     *
+     * @param author
+     */
     public void setAuthor(String author) {
         this.author = author;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getEvent() {
         return event;
     }
 
+    /**
+     *
+     * @param event
+     */
     public void setEvent(String event) {
         this.event = event;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getText() {
         return text;
     }
 
+    /**
+     *
+     * @param text
+     */
     public void setText(String text) {
         this.text = text;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDate() {
         return date;
     }
 
+    /**
+     *
+     * @param date
+     */
     public void setDate(Date date) {
         this.date = date;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getTaskid() {
         return taskid;
     }
 
+    /**
+     *
+     * @param takid
+     */
     public void setTaskid(String takid) {
         this.taskid = takid;
     }

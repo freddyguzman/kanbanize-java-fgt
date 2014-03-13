@@ -18,23 +18,44 @@ public class BoardElement {
     String id;
     String name;
     
+    /**
+     *
+     * @param jsonO
+     * @throws JSONException
+     */
     public BoardElement(JSONObject jsonO) throws JSONException{     
         this.id = jsonO.get("id").toString();
         if(!jsonO.isNull("name")) this.name = jsonO.get("name").toString();
     }
 
+    /**
+     *
+     * @return
+     */
     public String getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }

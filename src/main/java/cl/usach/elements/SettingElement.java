@@ -22,6 +22,11 @@ public class SettingElement {
     List<String> templates;
     List<String> types;
     
+    /**
+     *
+     * @param jsono
+     * @throws JSONException
+     */
     public SettingElement(JSONObject jsono) throws JSONException{
         if(!jsono.isNull("usernames")){
             usernames = new ArrayList<String>();
@@ -46,26 +51,50 @@ public class SettingElement {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public List<String> getUsernames() {
         return usernames;
     }
 
+    /**
+     *
+     * @param usernames
+     */
     public void setUsernames(List<String> usernames) {
         this.usernames = usernames;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<String> getTemplates() {
         return templates;
     }
 
+    /**
+     *
+     * @param templates
+     */
     public void setTemplates(List<String> templates) {
         this.templates = templates;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<String> getTypes() {
         return types;
     }
 
+    /**
+     *
+     * @param types
+     */
     public void setTypes(List<String> types) {
         this.types = types;
     }

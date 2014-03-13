@@ -22,6 +22,11 @@ public class ProjectElement {
     String name;
     List<BoardElement> boardElements;
     
+    /**
+     *
+     * @param jsonO
+     * @throws JSONException
+     */
     public ProjectElement(JSONObject jsonO) throws JSONException{
         this.id = jsonO.get("id").toString();
         if(!jsonO.isNull("name")) this.name = jsonO.get("name").toString();
@@ -36,26 +41,50 @@ public class ProjectElement {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<BoardElement> getBoardElements() {
         return boardElements;
     }
 
+    /**
+     *
+     * @param boardElements
+     */
     public void setBoardElements(List<BoardElement> boardElements) {
         this.boardElements = boardElements;
     }

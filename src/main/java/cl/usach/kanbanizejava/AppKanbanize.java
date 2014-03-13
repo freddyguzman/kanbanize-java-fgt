@@ -12,21 +12,37 @@ package cl.usach.kanbanizejava;
  */
 public class AppKanbanize {
     
-    String KEY;
+    String apiKey;
     String urlApiBase = "http://kanbanize.com/index.php/api/kanbanize/";
 
-    public String getKEY() {
-        return KEY;
+    /**
+     *
+     * @return
+     */
+    public String getApiKey() {
+        return apiKey;
     }
 
-    public void setKEY(String KEY) {
-        this.KEY = KEY;
+    /**
+     *
+     * @param apiKey
+     */
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getUrlApiBase() {
         return urlApiBase;
     }
 
+    /**
+     *
+     * @param urlApiBase
+     */
     public void setUrlApiBase(String urlApiBase) {
         this.urlApiBase = urlApiBase;
     }   

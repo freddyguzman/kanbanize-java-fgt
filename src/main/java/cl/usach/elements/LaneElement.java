@@ -22,6 +22,11 @@ public class LaneElement {
     String lcid;
     String color;
     
+    /**
+     *
+     * @param jsono
+     * @throws JSONException
+     */
     public LaneElement(JSONObject jsono) throws JSONException{
         if(!jsono.isNull("position")) this.position = jsono.getInt("position");
         if(!jsono.isNull("lcname")) this.lcname = jsono.getString("lcname");
@@ -31,50 +36,98 @@ public class LaneElement {
         if(!jsono.isNull("color")) this.color = jsono.getString("color");
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPosition() {
         return position;
     }
 
+    /**
+     *
+     * @param position
+     */
     public void setPosition(int position) {
         this.position = position;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLcname() {
         return lcname;
     }
 
+    /**
+     *
+     * @param lcname
+     */
     public void setLcname(String lcname) {
         this.lcname = lcname;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPath() {
         return path;
     }
 
+    /**
+     *
+     * @param path
+     */
     public void setPath(String path) {
         this.path = path;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     *
+     * @param description
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLcid() {
         return lcid;
     }
 
+    /**
+     *
+     * @param lcid
+     */
     public void setLcid(String lcid) {
         this.lcid = lcid;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getColor() {
         return color;
     }
 
+    /**
+     *
+     * @param color
+     */
     public void setColor(String color) {
         this.color = color;
     }

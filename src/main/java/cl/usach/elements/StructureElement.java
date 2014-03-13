@@ -21,6 +21,11 @@ public class StructureElement {
     List<ColumnElement> columnElements;
     List<LaneElement> laneElements;
     
+    /**
+     *
+     * @param jsono
+     * @throws JSONException
+     */
     public StructureElement(JSONObject jsono) throws JSONException{
         
         if(!jsono.isNull("columns")){
@@ -43,18 +48,34 @@ public class StructureElement {
         }        
     }
 
+    /**
+     *
+     * @return
+     */
     public List<ColumnElement> getColumnElements() {
         return columnElements;
     }
 
+    /**
+     *
+     * @param columnElements
+     */
     public void setColumnElements(List<ColumnElement> columnElements) {
         this.columnElements = columnElements;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<LaneElement> getLaneElements() {
         return laneElements;
     }
 
+    /**
+     *
+     * @param laneElements
+     */
     public void setLaneElements(List<LaneElement> laneElements) {
         this.laneElements = laneElements;
     }

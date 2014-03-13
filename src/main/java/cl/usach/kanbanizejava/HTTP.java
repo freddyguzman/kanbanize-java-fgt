@@ -20,26 +20,65 @@ import org.apache.http.impl.client.DefaultHttpClient;
 public class HTTP {
     
     String url;
+    String apikey;
 
+    /**
+     * Constructor de la clase
+     */
+    public HTTP() {
+    }
+    
+    /**
+     * Constructor de la clase
+     * @param url URL de la conexión
+     */
+    public HTTP(String url){
+        this.url = url;
+    }
+
+    public HTTP(String url, String apikey) {
+        this.url = url;
+        this.apikey = apikey;
+    }    
+
+    /**
+     *
+     * @return
+     */
     public String getUrl() {
         return url;
     }
 
+    /**
+     *
+     * @param url
+     */
     public void setUrl(String url) {
         this.url = url;
     }
+
+    public String getApikey() {
+        return apikey;
+    }
+
+    public void setApikey(String apikey) {
+        this.apikey = apikey;
+    }   
     
+    /**
+     *
+     * @return
+     */
     public String getResult(){
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost(url);
-        String result = null;
-        
-        System.out.println(url);
-        try{
-            httpPost.setHeader("apikey", "AwtDWx0pEckWRtmoDtDUB1arJiRr8UVJw70yznzl");
+        String result;
+        try{            
+            httpPost.setHeader("apikey", this.apikey);
             HttpResponse response = httpClient.execute(httpPost);
             BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
             result = rd.readLine();
+            System.out.println(result); 
         }catch(Exception e){
             return "Error: No se pudo conectar a URL";
         }

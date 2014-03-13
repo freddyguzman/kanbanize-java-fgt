@@ -22,6 +22,11 @@ public class ColumnElement {
     String description;
     String lcid;
     
+    /**
+     *
+     * @param jsono
+     * @throws JSONException
+     */
     public ColumnElement(JSONObject jsono) throws JSONException{
         if(!jsono.isNull("position")) this.position = jsono.getInt("position");
         if(!jsono.isNull("lcname")) this.lcname = jsono.getString("lcname");
@@ -31,50 +36,98 @@ public class ColumnElement {
         if(!jsono.isNull("lcid")) this.lcid = jsono.getString("lcid");
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPosition() {
         return position;
     }
 
+    /**
+     *
+     * @param position
+     */
     public void setPosition(int position) {
         this.position = position;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLcname() {
         return lcname;
     }
 
+    /**
+     *
+     * @param lcname
+     */
     public void setLcname(String lcname) {
         this.lcname = lcname;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getSection() {
         return section;
     }
 
+    /**
+     *
+     * @param section
+     */
     public void setSection(String section) {
         this.section = section;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPath() {
         return path;
     }
 
+    /**
+     *
+     * @param path
+     */
     public void setPath(String path) {
         this.path = path;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     *
+     * @param description
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLcid() {
         return lcid;
     }
 
+    /**
+     *
+     * @param lcid
+     */
     public void setLcid(String lcid) {
         this.lcid = lcid;
     }
