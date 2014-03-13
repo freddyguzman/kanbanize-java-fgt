@@ -6,8 +6,8 @@
 
 package cl.usach.kanbanizejava;
 
-import cl.usach.elements.ProjectElement;
-import cl.usach.methods.ProjectMethods;
+import cl.usach.elements.*;
+import cl.usach.methods.*;
 import java.util.List;
 
 /**
@@ -28,6 +28,14 @@ public class KanbanizeMake implements Kanbanize{
         ProjectMethods projectMethods = new ProjectMethods(appKanbanize);
         List<ProjectElement> projectElements = projectMethods.getProjectsAndBoards();
         return projectElements;
+    }
+    
+    /* ---------------- Metodos Structure --------------- */
+    
+    public StructureElement getFullBoardStructure(String idBoard){
+        StructureMethods structureMethods = new StructureMethods(appKanbanize);
+        StructureElement structureElements = structureMethods.getFullBoardStructure(idBoard);
+        return structureElements;
     }
     
 }

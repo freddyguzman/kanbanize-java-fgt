@@ -41,6 +41,7 @@ public class ProjectMethods {
     /**
      * Obtiene los proyectos y tableros del usuario
      * @return Lista de elementos Project
+     * @see http://kanbanize.com/ctrl_integration#get_projects_and_boards
      */
     public List<ProjectElement> getProjectsAndBoards(){
         url = appKanbanize.getUrlApiBase() + "get_projects_and_boards/format/json";

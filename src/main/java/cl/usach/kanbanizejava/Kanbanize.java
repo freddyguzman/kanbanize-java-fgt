@@ -6,7 +6,7 @@
 
 package cl.usach.kanbanizejava;
 
-import cl.usach.elements.ProjectElement;
+import cl.usach.elements.*;
 import java.util.List;
 
 /**
@@ -17,5 +17,11 @@ public interface Kanbanize {
     
     public void setConfig(String apiKey);
     
+    /* ---------------- Metodos Project --------------- */
+    
     public List<ProjectElement> getProjectsAndBoards();
+    
+    /* ---------------- Metodos Structure --------------- */
+    
+    public StructureElement getFullBoardStructure(String idBoard);
 }
