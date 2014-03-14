@@ -28,4 +28,10 @@ public interface Kanbanize {
     /* ---------------- Metodos Setting --------------- */
     
     public SettingElement getSettingsBoard(String idBoard);
+    
+    /* ---------------- Metodos Activity --------------- */
+    
+    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate);
+    
+    public int getTotalActivities(String idBoard, String fromDate, String toDate);
 }

@@ -22,7 +22,7 @@ public class MainClass
         String apiKey = "AwtDWx0pEckWRtmoDtDUB1arJiRr8UVJw70yznzl";
         kanbanize.setConfig(apiKey);
         
-        System.out.println(kanbanize.getSettingsBoard("4")); 
+        System.out.println(kanbanize.getBoardActivities("4","2014-03-10","2014-03-13")); 
         
         
     }

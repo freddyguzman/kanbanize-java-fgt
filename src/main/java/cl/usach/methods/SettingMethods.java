@@ -37,7 +37,6 @@ public class SettingMethods {
      */
     public SettingElement getSettingsBoard(String idBoard){
         url = appKanbanize.getUrlApiBase() + "get_board_settings/boardid/" + idBoard + "/format/json";
-        System.out.println(url);
         HTTP http = new HTTP(url, appKanbanize.getApiKey());
         SettingElement settingElement = null;        
         try{

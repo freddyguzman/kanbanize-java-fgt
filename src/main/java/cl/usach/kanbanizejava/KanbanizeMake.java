@@ -46,4 +46,18 @@ public class KanbanizeMake implements Kanbanize{
         return settingElement;
     }
     
+    /* ---------------- Metodos Activity --------------- */
+    
+    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate){
+        ActivityMethods activityMethods = new ActivityMethods(appKanbanize);
+        List<ActivityElement> activityElements = activityMethods.getBoardActivities(idBoard, fromDate, toDate);
+        return activityElements;
+    }
+    
+    public int getTotalActivities(String idBoard, String fromDate, String toDate){
+        ActivityMethods activityMethods = new ActivityMethods(appKanbanize);
+        int total = activityMethods.getTotalActivities(idBoard, fromDate, toDate);
+        return total;
+    }
+    
 }
