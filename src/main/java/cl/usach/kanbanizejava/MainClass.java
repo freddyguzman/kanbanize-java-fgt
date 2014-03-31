@@ -11,18 +11,18 @@ public class MainClass
 {
     public static void main( String[] args ) throws JSONException, ParseException
     {
-        /*String urlApiBase = "http://kanbanize.com/index.php/api/kanbanize/";
+        String urlApiBase = "http://kanbanize.com/index.php/api/kanbanize/";
         
         HTTP http = new HTTP();
-        http.setUrl(urlApiBase + "get_board_settings/boardid/4/format/json");
+        http.setUrl(urlApiBase + "get_task_details/boardid/4/taskid/21/format/json");
         http.setApikey("AwtDWx0pEckWRtmoDtDUB1arJiRr8UVJw70yznzl");
-        String result = http.getResult();*/
+        //String result = http.getResult();
         
         Kanbanize kanbanize = new KanbanizeMake();
         String apiKey = "AwtDWx0pEckWRtmoDtDUB1arJiRr8UVJw70yznzl";
         kanbanize.setConfig(apiKey);
         
-        System.out.println(kanbanize.getBoardActivities("4","2014-03-10","2014-03-13")); 
+        System.out.println(kanbanize.getTaskDetail("4","21")); 
         
         
     }

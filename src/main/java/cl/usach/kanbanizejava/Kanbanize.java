@@ -7,6 +7,7 @@
 package cl.usach.kanbanizejava;
 
 import cl.usach.elements.*;
+import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -31,7 +32,14 @@ public interface Kanbanize {
     
     /* ---------------- Metodos Activity --------------- */
     
-    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate);
+    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate) throws ParseException;
     
     public int getTotalActivities(String idBoard, String fromDate, String toDate);
+    
+    /* ---------------- Metodos Task --------------- */
+    
+    public List<TaskElement> getAllTask(String idBoard);
+    
+    public TaskElement getTaskDetail(String idBoard, String idTask);
+    
 }

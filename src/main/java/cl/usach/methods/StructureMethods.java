@@ -9,9 +9,6 @@ package cl.usach.methods;
 import cl.usach.elements.StructureElement;
 import cl.usach.kanbanizejava.AppKanbanize;
 import cl.usach.kanbanizejava.HTTP;
-import java.util.ArrayList;
-import java.util.List;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 

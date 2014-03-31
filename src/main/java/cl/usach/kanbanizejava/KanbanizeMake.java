@@ -8,6 +8,7 @@ package cl.usach.kanbanizejava;
 
 import cl.usach.elements.*;
 import cl.usach.methods.*;
+import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -48,7 +49,7 @@ public class KanbanizeMake implements Kanbanize{
     
     /* ---------------- Metodos Activity --------------- */
     
-    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate){
+    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate) throws ParseException{
         ActivityMethods activityMethods = new ActivityMethods(appKanbanize);
         List<ActivityElement> activityElements = activityMethods.getBoardActivities(idBoard, fromDate, toDate);
         return activityElements;
@@ -58,6 +59,20 @@ public class KanbanizeMake implements Kanbanize{
         ActivityMethods activityMethods = new ActivityMethods(appKanbanize);
         int total = activityMethods.getTotalActivities(idBoard, fromDate, toDate);
         return total;
+    }
+    
+    /* ---------------- Metodos Task --------------- */
+    
+    public List<TaskElement> getAllTask(String idBoard){
+        TaskMethods taskMethods = new TaskMethods(appKanbanize);
+        List<TaskElement> taskElements = taskMethods.getAllTask(idBoard);
+        return taskElements;
+    }
+    
+    public TaskElement getTaskDetail(String idBoard, String idTask){
+        TaskMethods taskMethods = new TaskMethods(appKanbanize);
+        TaskElement taskElement = taskMethods.getTaskDetail(idBoard, idTask);
+        return taskElement;
     }
     
 }
