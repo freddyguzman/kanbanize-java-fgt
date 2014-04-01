@@ -21,8 +21,9 @@ public class MainClass
         Kanbanize kanbanize = new KanbanizeMake();
         String apiKey = "AwtDWx0pEckWRtmoDtDUB1arJiRr8UVJw70yznzl";
         kanbanize.setConfig(apiKey);
+        String idBoard = "4";
         
-        System.out.println(kanbanize.getTaskDetail("4","21")); 
+        System.out.println(kanbanize.getSettingsBoard(idBoard)); 
         
         
     }
