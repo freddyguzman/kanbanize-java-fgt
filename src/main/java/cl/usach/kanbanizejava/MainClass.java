@@ -23,7 +23,7 @@ public class MainClass
         kanbanize.setConfig(apiKey);
         String idBoard = "4";
         
-        System.out.println(kanbanize.getSettingsBoard(idBoard)); 
+        System.out.println(kanbanize.getBoardActivities(idBoard, "2014-03-01", "2014-03-25")); 
         
         
     }
