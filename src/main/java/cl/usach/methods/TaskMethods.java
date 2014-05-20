@@ -42,7 +42,7 @@ public class TaskMethods {
         url = appKanbanize.getUrlApiBase() + "get_all_tasks/boardid/"+ idBoard + "/format/json";
         HTTP http = new HTTP(url, appKanbanize.getApiKey());
         JSONArray jsona;
-        List<TaskElement> taskElements = new ArrayList<TaskElement>();        
+        List<TaskElement> taskElements = new ArrayList<>();        
         try{
             jsona = new JSONArray(http.getResult());
             for (int i = 0; i < jsona.length(); i++) {

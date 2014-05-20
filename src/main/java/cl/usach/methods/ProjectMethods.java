@@ -47,7 +47,7 @@ public class ProjectMethods {
         url = appKanbanize.getUrlApiBase() + "get_projects_and_boards/format/json";
         HTTP http = new HTTP(url, appKanbanize.getApiKey());
         JSONArray jsona;
-        List<ProjectElement> projectElements = new ArrayList<ProjectElement>();       
+        List<ProjectElement> projectElements = new ArrayList<>();       
         try{
             JSONObject jsono = new JSONObject(http.getResult());
             jsona = new JSONArray(jsono.getString("projects"));

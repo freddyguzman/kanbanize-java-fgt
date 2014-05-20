@@ -72,13 +72,13 @@ public class HTTP {
     public String getResult(){
         HttpClient httpClient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost(url);
+        System.out.println(url); 
         String result;
         try{            
             httpPost.setHeader("apikey", this.apikey);
             HttpResponse response = httpClient.execute(httpPost);
             BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-            result = rd.readLine();
-            System.out.println(result); 
+            result = rd.readLine();            
         }catch(Exception e){
             return "Error: No se pudo conectar a URL";
         }

@@ -19,12 +19,14 @@ public class KanbanizeMake implements Kanbanize{
     
     AppKanbanize appKanbanize = new AppKanbanize();
     
+    @Override
     public void setConfig(String apiKey){
         this.appKanbanize.setApiKey(apiKey);
     }
     
     /* ---------------- Metodos Project --------------- */
     
+    @Override
     public List<ProjectElement> getProjectsAndBoards(){
         ProjectMethods projectMethods = new ProjectMethods(appKanbanize);
         List<ProjectElement> projectElements = projectMethods.getProjectsAndBoards();
@@ -33,6 +35,7 @@ public class KanbanizeMake implements Kanbanize{
     
     /* ---------------- Metodos Structure --------------- */
     
+    @Override
     public StructureElement getFullBoardStructure(String idBoard){
         StructureMethods structureMethods = new StructureMethods(appKanbanize);
         StructureElement structureElements = structureMethods.getFullBoardStructure(idBoard);
@@ -41,6 +44,7 @@ public class KanbanizeMake implements Kanbanize{
     
     /* ---------------- Metodos Setting --------------- */
     
+    @Override
     public SettingElement getSettingsBoard(String idBoard){
         SettingMethods settingMethods = new SettingMethods(appKanbanize);
         SettingElement settingElement = settingMethods.getSettingsBoard(idBoard);
@@ -49,12 +53,14 @@ public class KanbanizeMake implements Kanbanize{
     
     /* ---------------- Metodos Activity --------------- */
     
+    @Override
     public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate) throws ParseException{
         ActivityMethods activityMethods = new ActivityMethods(appKanbanize);
         List<ActivityElement> activityElements = activityMethods.getBoardActivities(idBoard, fromDate, toDate);
         return activityElements;
     }
     
+    @Override
     public int getTotalActivities(String idBoard, String fromDate, String toDate){
         ActivityMethods activityMethods = new ActivityMethods(appKanbanize);
         int total = activityMethods.getTotalActivities(idBoard, fromDate, toDate);
@@ -63,12 +69,14 @@ public class KanbanizeMake implements Kanbanize{
     
     /* ---------------- Metodos Task --------------- */
     
+    @Override
     public List<TaskElement> getAllTask(String idBoard){
         TaskMethods taskMethods = new TaskMethods(appKanbanize);
         List<TaskElement> taskElements = taskMethods.getAllTask(idBoard);
         return taskElements;
     }
     
+    @Override
     public TaskElement getTaskDetail(String idBoard, String idTask){
         TaskMethods taskMethods = new TaskMethods(appKanbanize);
         TaskElement taskElement = taskMethods.getTaskDetail(idBoard, idTask);

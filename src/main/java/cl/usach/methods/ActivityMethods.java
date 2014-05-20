@@ -44,7 +44,7 @@ public class ActivityMethods {
      * @see http://kanbanize.com/ctrl_integration#get_board_activities
      */
     public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate) throws ParseException{        
-        List<ActivityElement> activityElements = new ArrayList<ActivityElement>();
+        List<ActivityElement> activityElements = new ArrayList<>();
         int total = getTotalActivities(idBoard,fromDate,toDate);        
         if(total > 0){
             int pages = getTotalPages(total);            

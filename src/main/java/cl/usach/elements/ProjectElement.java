@@ -32,7 +32,7 @@ public class ProjectElement {
         if(!jsonO.isNull("name")) this.name = jsonO.get("name").toString();
         if(!jsonO.isNull("boards")){
             JSONArray jsonA = jsonO.getJSONArray("boards");
-            boardElements = new ArrayList<BoardElement>();
+            boardElements = new ArrayList<>();
             for (int i = 0; i < jsonA.length(); i++) {
                 JSONObject jso = new JSONObject(jsonA.get(i).toString());                
                 BoardElement boardElement = new BoardElement(jso);
