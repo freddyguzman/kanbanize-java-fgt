@@ -18,6 +18,8 @@ public interface Kanbanize {
     
     public void setConfig(String apiKey);
     
+    public Boolean checkConf();
+    
     /* ---------------- Metodos Project --------------- */
     
     public List<ProjectElement> getProjectsAndBoards();

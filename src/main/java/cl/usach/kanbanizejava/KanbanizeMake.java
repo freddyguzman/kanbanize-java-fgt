@@ -24,6 +24,12 @@ public class KanbanizeMake implements Kanbanize{
         this.appKanbanize.setApiKey(apiKey);
     }
     
+    @Override
+    public Boolean checkConf(){
+        Conf conf = new Conf(appKanbanize);
+        return conf.checkConf();
+    }
+    
     /* ---------------- Metodos Project --------------- */
     
     @Override
