@@ -29,7 +29,7 @@ public class StructureElement {
     public StructureElement(JSONObject jsono) throws JSONException{
         
         if(!jsono.isNull("columns")){
-            columnElements = new ArrayList<ColumnElement>();
+            columnElements = new ArrayList<>();
             JSONArray jsona = new JSONArray(jsono.getJSONArray("columns").toString());
             for (int i = 0; i < jsona.length(); i++) {
                 JSONObject jsono1 = new JSONObject(jsona.get(i).toString());
@@ -38,7 +38,7 @@ public class StructureElement {
             }
         }
         if(!jsono.isNull("lanes")){
-            laneElements = new ArrayList<LaneElement>();
+            laneElements = new ArrayList<>();
             JSONArray jsona = new JSONArray(jsono.getJSONArray("lanes").toString());
             for (int i = 0; i < jsona.length(); i++) {
                 JSONObject jsono1 = new JSONObject(jsona.get(i).toString());
@@ -84,12 +84,12 @@ public class StructureElement {
     public String toString() {
         String string;
         string = "columns : { ";
-        for (int i = 0; i < this.columnElements.size(); i++) {
-            string += this.columnElements.get(i).toString() +  " , ";
+        for (ColumnElement columnElement : this.columnElements) {
+            string += columnElement.toString() + " , ";
         }
         string += " } \n lanes: { ";
-        for (int i = 0; i < this.laneElements.size(); i++) {
-            string += this.laneElements.get(i).toString() +  " , ";
+        for (LaneElement laneElement : this.laneElements) {
+            string += laneElement.toString() + " , ";
         }
         string += " } \n";
         

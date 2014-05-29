@@ -40,10 +40,9 @@ public class ActivityMethods {
      * @param fromDate Fecha desde (formato: yyyy-mm-dd)
      * @param toDate Fecha hasta (formato: yyyy-mm-dd)
      * @return Lista de elementos Activity
-     * @throws ParseException
      * @see http://kanbanize.com/ctrl_integration#get_board_activities
      */
-    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate) throws ParseException{        
+    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate) {        
         List<ActivityElement> activityElements = new ArrayList<>();
         int total = getTotalActivities(idBoard,fromDate,toDate);        
         if(total > 0){

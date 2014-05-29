@@ -21,7 +21,7 @@ public class ActivityElement extends FormatDate{
     String author;
     String event;
     String text;
-    Date date;
+    String date;
     String taskid;
     
     /**
@@ -30,11 +30,11 @@ public class ActivityElement extends FormatDate{
      * @throws JSONException
      * @throws ParseException
      */
-    public ActivityElement(JSONObject jsono) throws JSONException, ParseException{
+    public ActivityElement(JSONObject jsono) throws JSONException{
         if(!jsono.isNull("author")) this.author = jsono.getString("author");
         if(!jsono.isNull("event")) this.event = jsono.getString("event");
         if(!jsono.isNull("text")) this.text = jsono.getString("text");
-        if(!jsono.isNull("date")) this.date = getFormatDate(jsono.getString("date"));
+        if(!jsono.isNull("date")) this.date = jsono.getString("date");
         if(!jsono.isNull("taskid")) this.taskid = jsono.getString("taskid");
     }
 
@@ -90,7 +90,7 @@ public class ActivityElement extends FormatDate{
      *
      * @return
      */
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -98,7 +98,7 @@ public class ActivityElement extends FormatDate{
      *
      * @param date
      */
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

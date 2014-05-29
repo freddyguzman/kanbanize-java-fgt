@@ -60,7 +60,7 @@ public class KanbanizeMake implements Kanbanize{
     /* ---------------- Metodos Activity --------------- */
     
     @Override
-    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate) throws ParseException{
+    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate){
         ActivityMethods activityMethods = new ActivityMethods(appKanbanize);
         List<ActivityElement> activityElements = activityMethods.getBoardActivities(idBoard, fromDate, toDate);
         return activityElements;

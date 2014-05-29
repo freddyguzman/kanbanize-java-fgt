@@ -34,7 +34,7 @@ public interface Kanbanize {
     
     /* ---------------- Metodos Activity --------------- */
     
-    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate) throws ParseException;
+    public List<ActivityElement> getBoardActivities(String idBoard, String fromDate, String toDate);
     
     public int getTotalActivities(String idBoard, String fromDate, String toDate);
     
