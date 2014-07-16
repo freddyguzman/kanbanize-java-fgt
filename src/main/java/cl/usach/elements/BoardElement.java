@@ -6,6 +6,7 @@
 
 package cl.usach.elements;
 
+import cl.usach.util.ReemplazarTildes;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -18,6 +19,8 @@ public class BoardElement {
     String id;
     String name;
     
+    ReemplazarTildes rt = new ReemplazarTildes();
+    
     /**
      *
      * @param jsonO
@@ -25,7 +28,7 @@ public class BoardElement {
      */
     public BoardElement(JSONObject jsonO) throws JSONException{     
         this.id = jsonO.get("id").toString();
-        if(!jsonO.isNull("name")) this.name = jsonO.get("name").toString();
+        if(!jsonO.isNull("name")) this.name = rt.formatString(jsonO.get("name").toString());
     }
 
     /**

@@ -6,6 +6,7 @@
 
 package cl.usach.elements;
 
+import cl.usach.util.ReemplazarTildes;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -22,6 +23,8 @@ public class LaneElement {
     String lcid;
     String color;
     
+    ReemplazarTildes rt = new ReemplazarTildes();
+    
     /**
      *
      * @param jsono
@@ -29,9 +32,9 @@ public class LaneElement {
      */
     public LaneElement(JSONObject jsono) throws JSONException{
         if(!jsono.isNull("position")) this.position = jsono.getInt("position");
-        if(!jsono.isNull("lcname")) this.lcname = jsono.getString("lcname");
+        if(!jsono.isNull("lcname")) this.lcname = rt.formatString(jsono.getString("lcname"));
         if(!jsono.isNull("path")) this.path = jsono.getString("path");
-        if(!jsono.isNull("description")) this.description = jsono.getString("description");
+        if(!jsono.isNull("description")) this.description = rt.formatString(jsono.getString("description"));
         if(!jsono.isNull("lcid")) this.lcid = jsono.getString("lcid");
         if(!jsono.isNull("color")) this.color = jsono.getString("color");
     }

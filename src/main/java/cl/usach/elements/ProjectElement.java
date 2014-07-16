@@ -6,6 +6,7 @@
 
 package cl.usach.elements;
 
+import cl.usach.util.ReemplazarTildes;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
@@ -22,6 +23,8 @@ public class ProjectElement {
     String name;
     List<BoardElement> boardElements;
     
+    ReemplazarTildes rt = new ReemplazarTildes();
+    
     /**
      *
      * @param jsonO
@@ -29,7 +32,7 @@ public class ProjectElement {
      */
     public ProjectElement(JSONObject jsonO) throws JSONException{
         this.id = jsonO.get("id").toString();
-        if(!jsonO.isNull("name")) this.name = jsonO.get("name").toString();
+        if(!jsonO.isNull("name")) this.name = rt.formatString(jsonO.get("name").toString());
         if(!jsonO.isNull("boards")){
             JSONArray jsonA = jsonO.getJSONArray("boards");
             boardElements = new ArrayList<>();

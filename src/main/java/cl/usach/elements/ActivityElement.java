@@ -7,8 +7,6 @@
 package cl.usach.elements;
 
 import cl.usach.util.FormatDate;
-import java.text.ParseException;
-import java.util.Date;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -28,7 +26,6 @@ public class ActivityElement extends FormatDate{
      *
      * @param jsono
      * @throws JSONException
-     * @throws ParseException
      */
     public ActivityElement(JSONObject jsono) throws JSONException{
         if(!jsono.isNull("author")) this.author = jsono.getString("author");

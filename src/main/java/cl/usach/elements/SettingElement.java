@@ -29,21 +29,21 @@ public class SettingElement {
      */
     public SettingElement(JSONObject jsono) throws JSONException{
         if(!jsono.isNull("usernames")){
-            usernames = new ArrayList<String>();
+            usernames = new ArrayList<>();
             JSONArray jsona = new JSONArray(jsono.get("usernames").toString());
             for(int i = 0; i < jsona.length(); i++){
                 this.usernames.add(jsona.getString(i));
             }
         }
         if(!jsono.isNull("templates")){
-            templates = new ArrayList<String>();
+            templates = new ArrayList<>();
             JSONArray jsona = new JSONArray(jsono.get("templates").toString());
             for(int i = 0; i < jsona.length(); i++){
                 this.templates.add(jsona.getString(i));
             }
         }
         if(!jsono.isNull("types")){
-            types = new ArrayList<String>();
+            types = new ArrayList<>();
             JSONArray jsona = new JSONArray(jsono.get("types").toString());
             for(int i = 0; i < jsona.length(); i++){
                 this.types.add(jsona.getString(i));

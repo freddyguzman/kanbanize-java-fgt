@@ -6,6 +6,7 @@
 
 package cl.usach.elements;
 
+import cl.usach.util.ReemplazarTildes;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -41,6 +42,8 @@ public class TaskElement {
     String columnpath;
     String logedtime;
     String links;
+    
+    ReemplazarTildes rt = new ReemplazarTildes();
 
     /**
      *
@@ -52,8 +55,8 @@ public class TaskElement {
         if(!jsono.isNull("position")) this.position = jsono.getString("position");
         if(!jsono.isNull("type")) this.type = jsono.getString("type");
         if(!jsono.isNull("assignee")) this.assignee = jsono.getString("assignee");
-        if(!jsono.isNull("title")) this.title = jsono.getString("title");
-        if(!jsono.isNull("description")) this.description = jsono.getString("description");
+        if(!jsono.isNull("title")) this.title = rt.formatString(jsono.getString("title"));
+        if(!jsono.isNull("description")) this.description = rt.formatString(jsono.getString("description"));
         if(!jsono.isNull("subtasks")) this.subtasks = jsono.getString("subtasks");
         if(!jsono.isNull("subtaskscomplete")) this.subtaskscomplete = jsono.getString("subtaskscomplete");
         if(!jsono.isNull("color")) this.color = jsono.getString("color");
@@ -69,8 +72,8 @@ public class TaskElement {
         if(!jsono.isNull("blocked")) this.blocked = jsono.getString("blocked");
         if(!jsono.isNull("blockedreason")) this.blockedreason = jsono.getString("blockedreason");
         if(!jsono.isNull("subtaskdetails")) this.subtaskdetails = jsono.getString("subtaskdetails");
-        if(!jsono.isNull("columnname")) this.columnname = jsono.getString("columnname");
-        if(!jsono.isNull("lanename")) this.lanename = jsono.getString("lanename");
+        if(!jsono.isNull("columnname")) this.columnname = rt.formatString(jsono.getString("columnname"));
+        if(!jsono.isNull("lanename")) this.lanename = rt.formatString(jsono.getString("lanename"));
         if(!jsono.isNull("columnpath")) this.columnpath = jsono.getString("columnpath");
         if(!jsono.isNull("logedtime")) this.logedtime = jsono.getString("logedtime");
         if(!jsono.isNull("links")) this.links = jsono.getString("links");
